@@ -28,6 +28,37 @@ Bonus2-KeyEnc/
 - `Bonus2-KeyEnc` is the updated version that uses authenticated key establishment with long-term Ed25519 identity keys and ephemeral X25519 exchange.
 - Do not mix files from the two folders in the same run.
 
+## Setup: Python Environment and Dependencies
+
+1. Create a virtual environment (if not already created):
+
+   ```bash
+   python -m venv .venv
+   ```
+
+2. Activate the virtual environment:
+
+   **Windows (PowerShell):**
+   ```bash
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+   **Windows (Command Prompt):**
+   ```bash
+   .venv\Scripts\activate.bat
+   ```
+
+   **macOS/Linux:**
+   ```bash
+   source .venv/bin/activate
+   ```
+
+3. Install required dependencies:
+
+   ```bash
+   pip install cryptography
+   ```
+
 ## Run Instructions for SharedPassword
 
 1. Open three terminals in the `SharedPassword` folder.
@@ -40,7 +71,7 @@ Bonus2-KeyEnc/
 3. Start two clients:
 
    ```bash
-   python client.py #Alice
+   python client.py Alice
    python client.py Bob
    ```
 
@@ -58,15 +89,15 @@ Bonus2-KeyEnc/
 3. Start two clients using the same client type:
 
    ```bash
-   python client.py #Alice
+   python client.py Alice
    python client.py Bob
    ```
 
    or
 
    ```bash
-   python client_custom_enc.py #Alice
-   python client_custom_enc.py #Bob
+   python client_custom_enc.py Alice
+   python client_custom_enc.py Bob
    ```
 
 4. Type a message in one window and click Send. The other window will display the received ciphertext and decrypted plaintext.
